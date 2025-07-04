@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT Card Maker</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+    <style>
+      /* Basic styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        display: flex;
+      }
+      .addnewcard {
+        width: 40%;
+        height: 100vh;
+        padding: 10px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid lightslategray;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .addnewcard h1 {
+        font-size: 40pt;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+      .addnewcard input {
+        font-size: 14pt;
+        padding: 5px 15px;
+        width: 400px;
+        height: 40px;
+        border: 1px solid rgb(62, 62, 62);
+        color: white;
+        background-color: black;
+        margin: 10px 0;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.2s ease, border-color 0.2s ease,
+          box-shadow 0.2s ease;
+        box-sizing: border-box;
+      }
+      .addnewcard button[type="submit"] {
+        width: 200px;
+        height: 50px;
+        color: white;
+        background-color: gray;
+        border-radius: 10px;
+        margin: 50px 0 0 0;
+        border: none;
+        font-size: 14pt;
+        transition: width 0.3s ease-in-out;
+      }
+      .container {
+        width: 60%;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0;
+      }
+      .cardcontainer {
+        width: 95%;
+        display: flex;
+        border-radius: 15px;
+        margin: 0 auto;
+        align-items: flex-start;
+        gap: 12px;
+        background-color: #0f0f0f;
+        color: white;
+        padding: 10px 5px;
+        border-radius: 12px;
+        font-family: Arial, sans-serif;
+        position: relative;
+      }
+      .serialnum {
+        font-size: 14px;
+        color: white;
+        align-self: center;
+      }
+      .thumbnail {
+        width: 200px;
+        height: 112px;
+        background-image: url("https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCKktmHuXV_macV6MoUwhKxwzXJ7w");
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        position: relative;
+      }
+      .thumbnail::after {
+        content: "HH:SS";
+        position: absolute;
+        bottom: 6px;
+        right: 6px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2px 6px;
+        font-size: 12px;
+        border-radius: 4px;
+      }
+      .titlecontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 4px;
+        flex-grow: 1;
+        overflow: hidden;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 6px;
+      }
+
+      .desc {
+        font-size: 13px;
+        color: #aaa;
+      }
+      .moreoptions {
+        position: absolute;
+        right: 15px;
+        top: 40px;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        color: white;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Hover/Active/Selection Styles */
+      *::selection {
+        background-color: rgba(220, 220, 220);
+        color: black;
+      }
+      .moreoptions:hover {
+        background-color: #363636;
+      }
+      .cardcontainer:hover {
+        background-color: rgba(51, 51, 51, 0.6);
+      }
+      .addnewcard input:focus {
+        transform: scale(1.1);
+        border-color: aliceblue;
+        box-shadow: 0 0 7px aliceblue;
+        outline: none;
+      }
+      .addnewcard button[type="submit"]:focus {
+        width: 400px;
+        transition: width 0.3s ease-in-out;
+      }
+      .addnewcard button[type="submit"]:hover {
+        background-color: rgb(110, 110, 110);
+      }
+      .addnewcard button[type="submit"]:active {
+        background-color: rgb(126, 126, 126);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <div class="addnewcard">
+        <h1>Add New Card</h1>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter Card Title"
+        />
+        <input
+          type="url"
+          name="thumbnail"
+          id="thumbnail"
+          placeholder="Enter Thumbnail URL"
+        />
+        <input
+          type="text"
+          id="views"
+          name="views"
+          pattern="^[0-9]+(\.[0-9]+)"
+          required
+          placeholder="Enter Views (e.g. 4.9)"
+        />
+        <input
+          type="text"
+          id="duration"
+          name="duration"
+          pattern="^[0-9]{1,2}:[0-5][0-9]$"
+          placeholder="Enter Duration (e.g. 31:20)"
+          required
+        />
+        <input
+          type="text"
+          id="uploadTime"
+          name="uploadTime"
+          pattern="^[0-9]+ (second|minute|hour|day|week|month|year)s"
+          required
+          placeholder="Enter Upload Time (e.g. 1 year)"
+        />
+        <button
+          type="submit"
+          onclick="addCard(
+              document.getElementById('thumbnail').value,
+            document.getElementById('title').value,
+            document.getElementById('views').value,
+            document.getElementById('duration').value,
+            document.getElementById('uploadTime').value
+            
+        )"
+        >
+          ADD
+        </button>
+      </div>
+      <div class="container">
+        <div class="cardcontainer">
+          <span class="serialnum">1</span>
+          <div class="thumbnail"></div>
+          <div class="titlecontainer">
+            <span class="title">Title of the Video</span>
+            <span class="desc"
+              >Channel &nbsp;•&nbsp; 4.5M views &nbsp;•&nbsp; 1 year ago</span
+            >
+            <button class="moreoptions">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                enable-background="new 0 0 24 24"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                focusable="false"
+                aria-hidden="true"
+                style="
+                  pointer-events: none;
+                  display: inherit;
+                  width: 100%;
+                  height: 100%;
+                "
+              >
+                <path
+                  style="fill: #fff"
+                  d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function capitalizeWords(str) {
+        return str
+          .split(" ")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      }
+      function addCard(thumb, title, views, duration, uploadtime) {
+        let card = document.createElement("div");
+        let container = document.body.querySelector(".container");
+        card.className = "cardcontainer";
+        card.innerHTML = `<span class="serialnum">1</span>
+          <div class="thumbnail"></div>
+          <div class="titlecontainer">
+            <span class="title">${capitalizeWords(String(title))}</span>
+            <span class="desc"
+              >CodeWithHarry &nbsp;•&nbsp; ${String(
+          views
+        ).toUpperCase()} views &nbsp;•&nbsp; ${String(
+          uploadtime
+        ).toLowerCase()} ago</span
+            >
+            <button class="moreoptions">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                enable-background="new 0 0 24 24"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                focusable="false"
+                aria-hidden="true"
+                style="
+                  pointer-events: none;
+                  display: inherit;
+                  width: 100%;
+                  height: 100%;
+                "
+              >
+                <path
+                  style="fill: #fff"
+                  d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"
+                ></path>
+              </svg>
+            </button>
+          </div>`;
+
+        container.appendChild(card);
+      }
+    </script>
+  </body>
+</html>

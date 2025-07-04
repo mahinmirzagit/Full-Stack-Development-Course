@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="fileInput" accept="audio/mp3" />
+
+    <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (e) {
+          const file = e.target.files[0];
+
+          jsmediatags.read(file, {
+            onSuccess: function (tag) {
+              console.log("Title:", tag.tags.title);
+              console.log("Artist:", tag.tags.artist);
+              console.log("Album:", tag.tags.album);
+
+              if (tag.tags.picture) {
+                const { data, format } = tag.tags.picture;
+                const byteArray = new Uint8Array(data);
+                const blob = new Blob([byteArray], { type: format });
+                const url = URL.createObjectURL(blob);
+
+                const img = document.createElement("img");
+                img.src = url;
+                img.style.width = "150px";
+                document.body.appendChild(img);
+              }
+            },
+            onError: function (error) {
+              console.error("Error reading tags:", error);
+            },
+          });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js"></script>
+  </body>
+</html>

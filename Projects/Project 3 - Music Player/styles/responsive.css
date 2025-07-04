@@ -1,0 +1,280 @@
+/* For 4k - 2560px*/
+/* none */
+
+/* For Laptop L - 1440px*/
+/* none */
+
+/* For Laptop M - 1024px*/
+@media (max-width: 1024px) {
+  .account .signup,
+  .account .login {
+    font-size: 0.8rem;
+  }
+  .account .signup {
+    margin: 0 10px;
+  }
+  .smallcard {
+    min-width: 150px;
+    height: 50px;
+  }
+  .smallcardtitle {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .bigcard {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+  }
+  .bigcard img {
+    border-radius: 8px;
+  }
+  .bigcardtitle {
+    font-size: 0.7rem;
+  }
+  .playbtn {
+    width: 30px;
+    height: 30px;
+  }
+  .playbtn svg {
+    width: 15px;
+    height: 15px;
+  }
+  .bigcard:hover .playbtn {
+    right: 20px;
+    top: 100px;
+  }
+  .sec1,
+  .sec2,
+  .sec3 {
+    margin-bottom: 0px;
+  }
+  .sectitle {
+    font-size: 1rem;
+  }
+  .playercontainer {
+    max-width: 300px;
+  }
+  .library {
+    width: calc(100vw - 300px);
+  }
+  .player {
+    height: 410px;
+  }
+  .poster {
+    height: 240px;
+  }
+  .credits h3 {
+    font-size: 1rem;
+  }
+}
+
+/* For Tablet L - 768px */
+@media (max-width: 768px) {
+  .header {
+    height: 65px;
+  }
+  main {
+    height: calc(100vh - 65px);
+  }
+  .logo {
+    font-size: 15pt;
+  }
+  .account .signup,
+  .account .login {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+  .account .signup {
+    margin: 0 5px;
+  }
+  .navlist {
+    gap: 20px;
+  }
+  .navlist ul {
+    gap: 5px;
+  }
+  .navlist ul button,
+  .hidden {
+    padding: 8px 10px;
+    font-size: 0.7rem;
+  }
+  .searchbar {
+    width: 250px;
+  }
+  .bigcard {
+    width: 120px;
+    height: auto;
+    padding: 8px;
+  }
+  .bigcard img {
+    border-radius: 6px;
+  }
+  .bigcardtitle {
+    font-size: 0.6rem;
+  }
+  .bigcard:hover .playbtn {
+    right: 10px;
+    top: 80px;
+  }
+  .playercontainer {
+    max-width: 250px;
+  }
+  .library {
+    width: calc(100vw - 250px);
+  }
+  .player {
+    height: 350px;
+  }
+  .poster {
+    height: 190px;
+  }
+  .credits .artists,
+  .titletext {
+    font-size: 0.9rem;
+  }
+  .authortext {
+    font-size: 0.8rem;
+  }
+  .follow {
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 5px 15px;
+  }
+  .playercontrols button i:not(.midcontrols i) {
+    font-size: 1rem;
+  }
+  .midcontrols {
+    gap: 5px;
+  }
+  .midcontrols i {
+    font-size: 1.4rem;
+  }
+  .download {
+    width: 20px;
+    height: 20px;
+  }
+  .time,
+  .download i {
+    bottom: 20px;
+    font-size: 0.8rem;
+  }
+  .seekbar {
+    height: 2px;
+  }
+  .seekball {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* For Tablet M - 640px */
+@media (max-width: 640px) {
+  .header {
+    height: 70px;
+  }
+  main {
+    height: calc(100vh - 70px);
+  }
+  .searchbar input {
+    display: none;
+  }
+  .hidden {
+    display: unset;
+  }
+  .searchbar {
+    width: fit-content;
+  }
+  .navlist ul button,
+  .hidden {
+    font-size: 10px;
+  }
+  .navlist ul li:last-child {
+    display: none;
+  }
+}
+
+/* For Tablet S - 575px */
+@media (max-width: 575px) {
+  .miniplayer {
+    display: flex;
+  }
+  .header {
+    height: 55px;
+  }
+  main {
+    height: calc(100vh - 150px);
+  }
+  .navbar {
+    padding: 5px 10px;
+  }
+  .playercontainer {
+    display: none;
+  }
+  .account {
+    padding: 0 5px;
+  }
+  .library {
+    width: 100vw;
+  }
+  .navlist {
+    margin: 0;
+  }
+  .library .playlistlibrary {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .rightbtn {
+    margin-right: 8px;
+  }
+  .leftbtn {
+    margin-left: 8px;
+  }
+  .userbtn {
+    display: none;
+  }
+}
+
+/* For Mobile L - 425px */
+@media (max-width: 425px) {
+  .bigcard {
+    width: 100px;
+    height: auto;
+    padding: 6px;
+  }
+  .bigcard img {
+    border-radius: 4px;
+  }
+  .mini-midcontrols {
+    gap: 5px;
+  }
+  .mini-rightcontrols {
+    gap: 5px;
+  }
+  .mini-leftcontrols {
+    gap: 5px;
+  }
+}
+
+/* For Mobile S - 320px */
+@media (max-width: 320px) {
+  .bigcard {
+    width: 70px;
+    height: auto;
+    padding: 4px;
+  }
+  .bigcard img {
+    border-radius: 2px;
+  }
+  .bigcardtitle {
+    font-size: 0.5rem;
+  }
+  .mini-playercontrols button i:not(.mini-midcontrols i) {
+    font-size: 0.85rem;
+  }
+  .mini-midcontrols i {
+    font-size: 1rem;
+  }
+  .mini-time *{
+    font-size: 0.7rem;
+  }
+}

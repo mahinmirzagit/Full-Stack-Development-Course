@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
+}
+
+.mainbg {
+  width: 100%;
+  min-height: 100vh;
+  background: url("/assets/images/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
+
+.mainbg .opac {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.topnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 150px;
+}
+
+.topnavbar .topnavlinks a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: rgb(229, 9, 20);
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin: 0 5px;
+}
+
+.topnavbar .topnavlinks a:hover {
+  background-color: rgb(164, 0, 0);
+}
+
+.topnavbar .topnavlinks select {
+  border: 1px solid #8a8a8a;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+}
+
+.topnavbar .topnavlinks select * {
+  color: black;
+  font-size: 14px;
+}
+
+.topnavbar .topnavlinks select *:hover {
+  color: white;
+}
+
+.headingsec {
+  background-color: transparent;
+  width: 55vw;
+  text-align: center;
+  color: #fff;
+  justify-self: center;
+  margin: 130px 0;
+  padding: 50px;
+}
+
+.headingsec h1 {
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.headingsec p {
+  margin: 20px 0;
+}
+
+.headingsec form {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.headingsec input#email {
+  padding: 15px 20px;
+  justify-self: center;
+  width: 400px;
+  font-size: 18px;
+  margin: 0 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #646464;
+}
+
+.headingsec input.submitmail {
+  padding: 15px 10px;
+  background-color: rgb(229, 9, 20);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px 0;
+  width: 150px;
+  font-size: 18px;
+}
+
+.headingsec input.submitmail:hover {
+  background-color: rgb(164, 0, 0);
+}

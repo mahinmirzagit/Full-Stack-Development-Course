@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(87, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        border: 2px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box1">BOX 1</div>
+      <div class="box" id="box2">BOX 2</div>
+      <div class="box" id="box3">BOX 3</div>
+      <div class="box" id="box4">BOX 4</div>
+      <div class="box" id="box5">BOX 5</div>
+    </div>
+    <script>
+      function randRGB() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      let doc = document.body.children[0];
+
+      let boxes = doc.querySelectorAll(".box");
+      boxes.forEach((e) => {
+        e.style.backgroundColor = randRGB();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+---------- HTML Important Questions ----------
+
+Q1. What is the difference between <b> tag and <strong> tag? Also , what is the difference between <i> tag and <emp> tag in HTML?
+A1. The <b> tag and <strong> tag maks the text bold but the difference between them is <b> and <i> tag is Non-semantic while <strong> and <emp> tag is semantic. These two semantic tags are used to define the importance of the text. And the non-semantic tags are used to make the text look different only. It is preferable to use <strong> and <emp> tags when the text is important and CSS for giving the style to the text instead of <b> and <i> tag.
+
+Q2. What is the difference between <section> and <article> semantic tags in HTML?
+A2. The <section> tag is used to define a section in a document. It is used to divide the document into sections.
+The <article> tag is used to define an independent piece of content. It is used to define a self-contained piece of content that can be distributed independently.
+
+Q3. Why we use <address> tag in HTML?
+A3. The <address> tag is used to define the contact information of the author/organisation of a document. It improves the accessibility of the document and also helps in search engine optimization (SEO) for crawling. NOTE: Never use this tag for the address of the location of event etc.
+
+Q4. Why we use <figure> tag and <figcaption> tag in HTML?
+A4. We use <figure> + <figcaption> when you want a caption floating separately from the main content. The media is related to but not essential to the surrounding content and when you want semantic grouping and better accessibility.
+
+Q5. Should i use <hr> tag in HTML?
+A5. Use <hr> in HTML5 when you mean a conceptual or topic break, not for visual styling and spacing. For visual lines or spacing, use CSS.
+
+
+Q6. What is the purpose of <blockquote> tag in HTML? Why not <q> tag?
+A6. The <blockquote> tag is used to define a section that is quoted from another source. It can include citation metadata using cite="" atrribute. For short quotes or inline quotations. Use <q> instead of <blockquote> tag.
+
+
+Q7. Why <abbr> in HTML?
+A7. Use the <abbr> tag to semantically mark abbreviations and improve accessibility by providing their full forms via the title attribute.
+
+Q8. What is the difference between <abbr> and <dfn> tag in HTML?
+A8. <dfn> is for defining a term using it's definition, while <abbr> is for marking an abbreviation or acronym, often with a full form.
+
+Q9. Why use <time> tag in HTML?
+A9. Use the <time> tag to mark dates or times in a human- and machine-readable way, enhancing semantic meaning and accessibility. Example : <time datetime="2025-07-10T15:00">3:00 PM, July 10</time>
+
+Q10. Why use <del> and <ins> tag in HTML?
+A10. Use <del> and <ins> to semantically mark removed and added content in a document, aiding clarity, version tracking, and accessibility. Example:
+<del datetime="2025-06-10T10:00">Old title</del>
+<ins datetime="2025-06-11T08:30">New title</ins>

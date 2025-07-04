@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
+    CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial,
+    "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+}
+button {
+  cursor: pointer;
+}
+.navbar a {
+  text-decoration: none;
+  color: rgb(179, 179, 179);
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  top: 0;
+  height: fit-content;
+  left: 0;
+  background-color: black;
+}
+.leftitems {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+.leftitems .logo {
+  width: 32px;
+  margin: 10px 20px;
+}
+.leftitems .home {
+  background-color: rgb(32, 32, 32);
+  border: none;
+  padding: 10px;
+  border-radius: 150px;
+}
+.leftitems .searchbar {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  width: 100%;
+  background-color: rgb(35, 35, 35);
+}
+.leftitems .searchbar .search {
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 10px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid white;
+  color: rgb(255, 255, 255);
+}
+.leftitems .searchbar .search::placeholder {
+  color: rgb(179, 179, 179);
+}
+.rightitems {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+.rightitems .navbarlist {
+  display: flex;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgb(179, 179, 179);
+  list-style: none;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-right: 2px solid white;
+  padding: 5px 20px;
+  margin: 0 20px;
+}
+.rightitems .installapp {
+  display: flex;
+  padding: 10px;
+  font-weight: 700;
+  flex-wrap: nowrap;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: rgb(179, 179, 179);
+  margin: 0 20px;
+}
+.rightitems.account {
+  display: flex;
+}
+.rightitems .account .signup {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: rgb(179, 179, 179);
+}
+.rightitems .account .login {
+  font-weight: 700;
+  font-size: 16px;
+  background: white;
+  border-radius: 50px;
+  padding: 15px 25px;
+  border: none;
+  color: black;
+}
+
+@media screen and (max-width: 1280px) {
+  .leftitems {
+    width: 40%;
+  }
+  .rightitems {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .rightitems .installapp {
+    margin: 0 5px;
+  }
+  .rightitems .navbarlist {
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ZMAX Studios</title>
+</head>
+<body>
+    <h1>Sign Up To ZMAX Studios</h1>
+    <form action="#" method="get">
+        <p>
+        <label for="name">Full Name : </label>
+        <input type="text" name="name" id="name" placeholder="Enter Your Full Name" maxlength="50" pattern="[a-z A-Z]+" required autofocus>
+        </p>
+        <p>
+        <label for="email">Email : </label>
+        <input type="email" name="email" id="email" placeholder="support@example.com" maxlength="50" required>
+        </p>
+        <p>
+        <label for="username">Username : </label>
+        <input type="text" name="username" id="username" placeholder="Enter Your Username" maxlength="30" pattern="[a-zA-Z0-9]+" required>
+        </p>
+        <p>
+        <label for="password">Password : </label>
+        <input type="password" name="password" id="enterpassword" placeholder="Enter Your Password" maxlength="15" minlength="8" required>
+        </p>
+        <p>
+        <label for="cnfmpassword">Confirm Password : </label>
+        <input type="password" name="password" id="cnfmpassword" placeholder="Confirm Your Password" maxlength="15" minlength="8" required>
+        </p>
+        <p>
+        <label for="gender">Gender : </label>
+        <input type="radio" name="gender" id="male" value="m" checked><label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="f"><label for="female">Female</label>
+        <input type="radio" name="gender" id="other" value="o"><label for="other">Other</label>
+        </p>
+        <p>
+        <label for="telephone">Contact no. : +91</label>
+        <input type="tel" name="telephone" id="telephone" placeholder="Enter Your Phone Number" maxlength="10" pattern="[0-9]+" required>
+        </p>
+        <p>
+            <label for="address">Address : </label>
+            <textarea name="address" id="address" cols="30" rows="1" placeholder="Enter Address" required></textarea>
+        </p>
+        <p>
+        <label for="skills">Skills : </label>
+        <input type="checkbox" name="lyricist" id="lyricist"><label for="lyricist">Lyricist</label>
+        <input type="checkbox" name="vocalist" id="vocalist"><label for="vocalist">Vocalist</label>
+        <input type="checkbox" name="producer" id="producer"><label for="producer">Producer</label>
+        </p>
+        <p>
+        <label for="fieldofwork">Choose Field :</label>
+        <select required>
+            <option value="none">None</option>
+            <option value="prodfield">Producer</option>
+            <option value="lyrfield">Lyricist</option>
+            <option value="vocfield">Vocalist</option>
+        </select>
+        </p>
+        <p>
+        <label for="dob">Date of Birth :</label>
+        <input type="date" name="dob" id="dob" required>
+        </p>
+        <p>
+        <label for="favcolor">Favourite Color :</label>
+        <input type="color" name="favcolor" id="favcolor" value="#ff00ff">
+        </p>
+        <p>
+        <label for="samplemsc">Sample Music :</label>
+        <input type="file" name="samplemsc" id="samplemsc" accept="audio/*, video/*" multiple>
+        </p>
+        <p>
+        <label for="instaurl">Instagram :</label>
+        <input type="url" name="instaurl" id="instaurl" placeholder="Instagram URL">
+        </p>
+        <p>
+        <label for="stresslvl">Stress Level</label>
+        <input type="range" name="stresslvl" id="stresslvl" min="0" max="100" value="10" step="10">
+        </p>
+        <p>
+        <label for="week">Select Week :</label>
+        <input type="week" name="week" id="week">
+        </p>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+
+    </form>
+</body>
+</html>

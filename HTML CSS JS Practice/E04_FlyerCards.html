@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f0f0f0;
+        display: flex;
+      }
+
+      .container {
+        width: 25vw;
+        background-color: #fff;
+        border: 1px solid #828282;
+        border-radius: 15px;
+        display: inline-block;
+        margin: auto;
+        padding: 8px;
+      }
+
+      .container #lakeimg {
+        width: 100%;
+        border-radius: 15px;
+        margin: 0 0 15px 0;
+      }
+
+      .container span {
+        margin: 0 4px;
+        color: #696969;
+        padding: 2px 8px;
+        font-size: 14px;
+        border: 1px solid #a8a8a8;
+        border-radius: 10px;
+      }
+
+      #readmorebtn {
+        display: flex;
+        margin: 10px auto;
+        padding: 10px 18px;
+        color: rgb(8, 8, 255);
+        background-color: rgb(213, 244, 255);
+        border: none;
+        font-weight: bolder;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      #readmorebtn:active {
+        background-color: rgb(165, 224, 245);
+      }
+
+      .container > p {
+        color: #828282;
+        line-height: 18px;
+        letter-spacing: 1px;
+        margin: 16px 10px 0 10px;
+      }
+
+      .container > h2 {
+        margin: 15px 10px 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        id="lakeimg"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ39oMD2B6UzK3mN_lBt04-DhPiLTA1_T5PkQ&s"
+        alt="Nature IMG"
+      />
+      <span>Nature</span>
+      <span>Lake</span>
+      <h2>Rio De Janeiro</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto at quae
+        consequatur minima expedita voluptatum odit.
+      </p>
+      <button id="readmorebtn">Read More</button>
+    </div>
+  </body>
+</html>

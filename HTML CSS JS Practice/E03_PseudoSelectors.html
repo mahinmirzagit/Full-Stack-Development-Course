@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Selectors</title>
+    <style>
+        div{
+            width: 500px;
+            height: auto;
+            border: 2px solid black;
+        }
+        div > p:first-child{    
+            background-color: yellow;
+            color: red;
+        }
+
+        div > p:last-child{
+            background-color: blue;
+            color: azure;
+        }
+
+        div > p:nth-last-child(2){
+            background-color: black;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsa officia ipsum, quibusdam exercitationem nemo repellendus corrupti vel? Asperiores, excepturi reiciendis. Officia est perferendis, consequuntur rerum ut fugit nam quia vero praesentium architecto, consequatur, et veniam tempore voluptas amet corrupti nulla iusto atque laudantium adipisci.</p>
+        <p>This is div1</p>
+        <p>Gudbye</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsa officia ipsum, quibusdam exercitationem nemo repellendus corrupti vel? Asperiores, excepturi reiciendis. Officia est perferendis, consequuntur rerum ut fugit nam quia vero praesentium architecto, consequatur, et veniam tempore voluptas amet corrupti nulla iusto atque laudantium adipisci.</p>
+        <p>This is div1</p>
+        <p>Gudbye</p>
+    </div>
+
+</body>
+</html>

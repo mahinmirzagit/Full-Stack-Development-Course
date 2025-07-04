@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tell Me a Joke</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background-color: cornflowerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .jokebox {
+        width: 70%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jokebox"></div>
+    </div>
+    <script>
+      function randcolor() {
+        let r = Math.random() * 256;
+        let g = Math.random() * 256;
+        let b = Math.random() * 256;
+
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      function joke() {
+        let jokeList = [
+          `What's the difference between a hippo and a zippo?  One is really heavy and the other's a little lighter.`,
+          `What does a nosey pepper do?  It gets jalapeño business.`,
+          `When does a joke become a 'dad' joke?  When it becomes apparent.`,
+          `Why did the bullet end up losing his job?  He got fired.`,
+          `Where does a waitress with only one leg work?  IHOP.`,
+          `What does a house wear?  Address!`,
+          `Why are toilets always so good at poker?  They always get a flush`,
+        ];
+
+        let joke = jokeList[Math.ceil(Math.random() * (jokeList.length - 1))];
+        return joke;
+      }
+
+      let container = document.body.querySelector(".container");
+      container.style.backgroundColor = randcolor();
+
+      let newjoke = document.createElement("span");
+      newjoke.innerHTML = joke();
+      newjoke.style.fontSize = "18pt";
+
+      container.firstElementChild.append(newjoke);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacking Terminal</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 50px;
+        background-color: #1a1a1a;
+        color: lime;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function delay() {
+        return new Promise((resolve) => {
+          var timeout = Math.ceil(Math.random() * 4) * 1000;
+          setTimeout(() => {
+            resolve();
+          }, timeout);
+        });
+      }
+      async function additem(item) {
+        await delay();
+        let div = document.createElement("div");
+        div.innerHTML = item;
+        document.body.appendChild(div);
+      }
+
+      async function main() {
+        let t = setInterval(() => {
+          let last = document.body.getElementsByTagName("div");
+          last = last[last.length - 1];
+          if (last.innerHTML.endsWith("...")) {
+            last.innerHTML = last.innerHTML.slice(0, last.innerHTML.length - 3);
+          } else {
+            last.innerHTML = last.innerHTML + ".";
+          }
+        }, 500);
+
+        let msgs = [
+          "Initialized Hacking now reading your data",
+          "Reading your Files",
+          "Password files Detected",
+          "Sending all passwords and personal files to server",
+          "Cleaning up",
+          "Hacking Complete",
+          "Hacker hai bhai Hacker hai",
+        ];
+
+        for (const item of msgs) {
+          await additem(item);
+        }
+        delay();
+        clearInterval(t);
+      }
+      main();
+    </script>
+  </body>
+</html>

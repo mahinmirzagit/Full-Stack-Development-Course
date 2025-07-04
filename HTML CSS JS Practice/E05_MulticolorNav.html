@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multicolor Nav</title>
+    <style>
+      :root {
+        --darkthemenavbg: #242424;
+        --darkthemenavcolor: #dadada;
+        --lightthemenavbg: #b6b6b6;
+        --lightthemenavcolor: #313131;
+      }
+
+      @media screen and (max-width: 548px) {
+        nav {
+          background-color: var(--lightthemenavbg);
+          color: var(--lightthemenavcolor);
+        }
+        nav ul li a {
+          background-color: #fff;
+        color: var(--lightthemenavcolor);
+      }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      nav {
+        background-color: var(--darkthemenavbg);
+        color: var(--darkthemenavcolor);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        padding: 15px;
+      }
+
+      nav ul li a {
+        margin: 0 20px;
+        padding: 8px;
+        text-decoration: none;
+        color: var(--darkthemenavcolor);
+      }
+
+      nav #joinuslink {
+        border-radius: 20px;
+        background-color: rgb(80, 80, 255);
+      }
+
+      nav #joinuslink:hover {
+        background-color: rgb(39, 39, 254);
+      }
+
+      nav #joinuslink:active {
+        background-color: rgb(14, 14, 181);
+        padding: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Author</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" id="joinuslink">Join Us</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
